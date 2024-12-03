@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <link rel="stylesheet" href ="style.css">
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                  google.charts.load('current', {'packages':['corechart']});
+                  google.charts.setOnLoadCallback(drawChart);
+            
+                  function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                      ['days', 'hydration', 'sleep hour', ],
+                      ['Mon',  600,       400],
+                      ['Tues',  1070,      960],
+                      ['wed',  660,       720],
+                      ['Thus',  1020,      840]
+                    ]);
+            
+                    var options = {
+                      title: '',
+                      curveType: 'function',
+                      legend: { position: 'bottom' }
+                    };
+            
+                    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+            
+                    chart.draw(data, options);
+                  }
+                </script>
+
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class ="top-container">
+        <div class ="nav">
+            <div class ="logo">
+                <i class='bx bx-universal-access'></i>
+                <h1 href="#">SOUL SCRIBE </h1>
+
+            </div>
+            <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="#">Health status </a>
+                <a href="https://chatgpt.com/">AI CHAT</a>
+                <a href="#">Settings</a>
+            </div>
+
+            <div class="right-section">
+                <i class='bx bx-bell'></i>
+                <i class='bx bx-search'></i>
+
+                <div class="profile">
+                    <div class="info">
+                        <img src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_0.jpg">
+                        <div>
+                            <a href="#">Nibble ji</a>
+                            <p>Age : 26</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="status">
+            <div class="header">
+                <h1 id="big">welcome to AI journal specialist</h1>
+                <h2 id="small">Weekly Activity</h2>
+            </div>
+
+            <div class="items-list">
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h3>Hydration</h3>
+                            <p>- Reducing body temperature</p>
+                            <p>- Regulation of blood circulation</p>
+                        </div>
+                        <i class='bx bx-child'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h3>Mood Tracker
+                            </h3>
+                            <p>-Science-based exercises </p>
+                            <p>- 3 exercieses left</p>
+                        </div>
+                        <i class='bx bx-infinite'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h3>Sleep Hours:</h3>
+                            <p>- 6 hour sleep</p>
+                            <p>- 2 hour left to complet..</p>
+                        </div>
+                        <i class='bx bxs-alarm-snooze'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                        
+                    </div>
+                </div>
+                <div class="item"><div> <div id="piechart_3d" style="width: 400px; height: 200px;">
+                    <canvas class="graph"></canvas><div>
+                    </div><div><h1>
+                        <script src = "script.js"> </script>
+                    </h1></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="bottom-container">
+
+        <div class="prog-status">
+            <div class="header">
+                <h4>Health Status</h4>
+                <div class="tabs">
+                    <a href="#" class="active">1 day</a>
+                    <a href="#" class ="active">3 days</a>
+                    <a href="#" class ="active">1week</a>
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="item">
+                    
+                    <h2>89%</h2>
+                    <p>Current </p>
+                </div>
+                <div class="separator"></div>
+                <div class="item">
+                    <h2>92%</h2>
+                    <p> Average health </p>
+                </div> 
+            </div><div id="curve_chart" style="width: 750px; height: 500px"></div>
+           
+            <canvas class="prog-chart"></canvas>
+
+        </div>
+
+        <div class="popular">
+            <div class="header">
+                <h4>Popular</h4>
+                <a href="#"># Data</a>
+            </div>
+
+            <img src="https://th.bing.com/th/id/OIP.GwjI0ouFyrGZYlnQxs-sCAHaEa?w=306&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+            <div class="audio">
+                <i class='bx bx-podcast'></i>
+                <a href="#"> "Why do you feel this way today?"</a>
+            </div>
+            <p>AI had too much to deal with 'mood', 'health','sleep'...</p>
+            <div class="listen">
+                <div class="author">
+                    <img src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_0.jpg">
+                    <div>
+                        <a href="#">Nibble</a>
+                        <p>AGE:26</p>
+                    </div>
+                </div>
+                <button>Listen<i class='bx bx-right-arrow-alt'></i></button>
+            </div>
+
+        </div>
+
+
+        <div class="upcoming">
+
+            <div class="header">
+                <h4>You may like it</h4>
+                <a href="#">DEC<i class='bx bx-chevron-down'></i></a>
+            </div>
+
+            <div class="dates">
+                <div class="item">
+                    <h5>Mo</h5>
+                    <a href="#">12</a>
+                </div>
+                <div class="item active">
+                    <h5>Tu</h5>
+                    <a href="#">13</a>
+                </div>
+                <div class="item">
+                    <h5>We</h5>
+                    <a href="#">14</a>
+                </div>
+                <div class="item">
+                    <h5>Th</h5>
+                    <a href="#">15</a>
+                </div>
+                <div class="item">
+                    <h5>Fr</h5>
+                    <a href="#">16</a>
+                </div>
+                <div class="item">
+                    <h5>Sa</h5>
+                    <a href="#">17</a>
+                </div>
+                <div class="item">
+                    <h5>Su</h5>
+                    <a href="#">18</a>
+                </div>
+            </div>
+
+            <div class="events">
+                <div class="item">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        <div class="event-info">
+                            <a href="#">SLEEP</a>
+                            <p>10:00-06:00</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        <div class="event-info">
+                            <a href="#">Exercises</a>
+                            <p>06:20-06:50</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        <div class="event-info">
+                            <a href="#">break fast</a>
+                            <p>07:00-07:30</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        <div class="event-info">
+                            <a href="#">work</a>
+                            <p>08:00-12:30</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="container">
+        <canvar id="chart"></canvar>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>                    
+    <script src="script.js"></script>
+    
+
+    
+   
+
+
+</body>
+
+</html>
+ 
